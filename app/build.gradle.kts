@@ -19,6 +19,9 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+        buildConfigField("String", "BASE_URL", "\"https://api.thecatapi.com/v1/\"")
+        buildConfigField("String", "API_KEY", "\"live_4zD7sWVfiVWjjGR23e92Fah9ZzaK9awaX6wVFdVVT1ggFzGdrfFjPnPeqJsFq1rD\"")
     }
 
     buildTypes {
@@ -39,9 +42,10 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
     packaging {
         resources {
@@ -75,7 +79,6 @@ dependencies {
 
     // Image
     implementation(libs.glide)
-    implementation(libs.glide.palette)
 
     // Coroutines
     implementation(libs.coroutines)
